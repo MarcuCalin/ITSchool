@@ -1,6 +1,4 @@
 # ITSchool
 Portofoliu DevOps
 
-## Hello script 
-''' echo Hello
-'''
+Aici m-am jucat cu scripturi de BASH :)
