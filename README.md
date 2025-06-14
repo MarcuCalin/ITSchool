@@ -1,4 +1,5 @@
 # ITSchool
 Portofoliu DevOps
 
-Aici m-am jucat cu scripturi de BASH :)
+Aici m-am jucat cu scripturi de BASH + Python
+
