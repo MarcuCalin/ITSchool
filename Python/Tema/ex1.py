@@ -3,7 +3,7 @@
 
 nume = "Calin" # string
 varsta = 38 # number
-boolean = True # boolean
+este_logat = True # boolean
 x = None # None
 lista = ["mar", "banana", "piersica"] # list
 s = {10, 50, 20} # set
@@ -19,7 +19,7 @@ tup = (1, 2, 3, 4, 5) # Tuple
 
 print(type(nume))
 print(type(varsta))
-print(type(boolean))
+print(type(este_logat))
 print(type(x))
 print(type(lista))
 print(type(s))
@@ -37,7 +37,7 @@ print(type(tup))
 documentatie = f"""\
 Variabila nume este de tipul {type(nume).__name__} si are valoarea {nume}
 Variabila nume este de tipul {type(varsta).__name__} si are valoarea {varsta}
-Variabila nume este de tipul {type(boolean).__name__} si are valoarea {boolean}
+Variabila nume este de tipul {type(este_logat).__name__} si are valoarea {este_logat}
 Variabila nume este de tipul {type(x).__name__} si are valoarea {x}
 Variabila nume este de tipul {type(lista).__name__} si are valoarea {lista}
 Variabila nume este de tipul {type(dic).__name__} si are valoarea {dic}

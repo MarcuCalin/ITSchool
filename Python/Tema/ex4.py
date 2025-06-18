@@ -37,7 +37,16 @@ else:
                       
 # 2. Citește fiecare URL din fișier
 with open("urls.txt", "r") as url_file:
-    urls = [line.strip() for line in url_file if line.strip()] # am cautat pe net cum se citeste linie cu linie cu lib requests
+    # urls = [line.strip() for line in url_file if line.strip()] # am cautat pe net cum se citeste linie cu linie cu lib requests
+    urls = []
+    for line in url_file:
+        line = line.strip()
+        print(line)
+        if line:
+            urls.append(line.strip())
+        
+                    
+print(urls)
 
 # 3. Trimite request pentru fiecare URL
 for url in urls:
