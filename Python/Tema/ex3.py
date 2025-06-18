@@ -17,7 +17,7 @@ varsta = int(varsta)
 
 
 if not user and varsta:
-        raise ValueError("Trebuie să introduci atât numele utilizatorului, cât și vârsta.")
+        sys.exit(2)
 else:
         print(f"Au fost pasati {len(sys.argv)-1} parametrii.") # primul argument e scriptul 
 
