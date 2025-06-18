@@ -44,6 +44,7 @@ for url in urls:
     try:
         response = requests.get(url)
         status = response.status_code
+        status = int(status)
 
         # 4. Scrie în fișierul corespunzător
         if 200 <= status <= 299:
