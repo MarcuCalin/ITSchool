@@ -1,7 +1,5 @@
-FROM python:3.11-slim
+FROM ubuntu
 
-WORKDIR /app
+RUN apt-get update && apt-get install -y vim && apt-get install iputils-ping -y
 
-COPY app.py .
-
-CMD ["python", "app.py"]
+CMD ["sleep", "infinity"]
