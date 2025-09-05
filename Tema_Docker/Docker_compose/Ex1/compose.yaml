@@ -1,0 +1,13 @@
+# compose.yml
+
+name: ex1  
+
+services:        
+  ex1-nginx:  
+    image: nginx:latest
+    container_name: exercitiul1 
+    ports:         
+      - "8080:80"
+    volumes:       
+      - /home/eu/my-nginx-content:/usr/share/nginx/html
+    restart: always
