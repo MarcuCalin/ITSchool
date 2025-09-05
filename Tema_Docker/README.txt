@@ -1,22 +1,30 @@
-Instructions 
+Exercitiul 9 (tools image)
 
-1. Construieste imaginea Docker
+Creați o imagine de docker cu numele tools plecand de la imaginea de baza ubuntu si instalati pe ea (în Dockerfile următoarele):
+vim
+curl (iputils-ping)
+Puneti in CMD un sleep Infinity ca imaginea sa nu “moara” imediat ce a fost pornita. Fceti build la imagine si porniti un container de test (dati ping catre google.com) 
+O sa folosim aceasta imagine in exercitiile urmatoare.
 
-docker build -t logger-app .
 
-2.Creeaza volumul Docker
+Dockerfile ---> 
+FROM ubuntu
 
-docker volume create loguri
+RUN apt-get update && apt-get install -y vim && apt-get install iputils-ping -y
 
-3.Ruleaza containerul pentru logger
+CMD ["sleep", "infinity"]
 
-docker run -d --name logger -v loguri:/log logger-app
+Comenzi :
 
-4.Ruleaza containerul NGINX care expune fisierul
+docker build -t tools .
 
-docker run -d --name nginx-logs -p 8080:80 -v loguri:/usr/share/nginx/html nginx
+docker run -d --name test tools
 
-5.Verifica in browser local 
+docker exec -it test /bin/bash
 
-http://localhost:8080/app.log
-
+root@903eb4f65bfe:/# ping google.com
+PING google.com (142.250.201.206) 56(84) bytes of data.
+64 bytes from bud02s35-in-f14.1e100.net (142.250.201.206): icmp_seq=1 ttl=254 time=22.4 ms
+64 bytes from bud02s35-in-f14.1e100.net (142.250.201.206): icmp_seq=2 ttl=254 time=13.7 ms
+64 bytes from bud02s35-in-f14.1e100.net (142.250.201.206): icmp_seq=3 ttl=254 time=14.5 ms
+64 bytes from bud02s35-in-f14.1e100.net (142.250.201.206): icmp_seq=4 ttl=254 time=17.6 ms
